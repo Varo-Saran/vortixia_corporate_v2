@@ -3,6 +3,8 @@ import { db } from '../../lib/db';
 import { jobs } from '../../lib/db/schema';
 import { eq } from 'drizzle-orm';
 
+export const dynamic = 'force-dynamic';
+
 export default async function OpenPositionsPage() {
   const allJobs = await db.select().from(jobs).where(eq(jobs.status, 'open'));
 
