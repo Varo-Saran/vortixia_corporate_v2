@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-primary: #F9F9FB;
+  --color-bg-dark: #0B0B0C;
+  --color-text-main: #111112;
+  --color-text-muted: #5A5A62;
+  --color-accent-volt: #CCFF00;
+  --color-border-stark: #111112;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --bg-primary: #F9F9FB;
+  --bg-dark: #0B0B0C;
+  --text-main: #111112;
+  --text-muted: #5A5A62;
+  --accent-volt: #CCFF00;
+  --border-stark: #111112;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+
+.neo-card {
+  border: 2px solid var(--border-stark);
+  box-shadow: 4px 4px 0px 0px var(--border-stark);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  background-color: var(--bg-primary);
+}
+
+.neo-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--border-stark);
+}
+
+.neo-card-dark {
+  background-color: var(--bg-dark);
+  color: var(--bg-primary);
+}
+
+.neo-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--border-stark);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  letter-spacing: 0.05em;
+  transition: all 0.1s ease;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px var(--border-stark);
+}
+
+.neo-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px var(--border-stark);
+}
+
+.neo-btn-primary {
+  background-color: var(--accent-volt);
+}
+
+.neo-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-stark);
+  background-color: var(--bg-primary);
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  transition: all 0.1s ease;
+  outline: none;
+}
+
+.neo-input:focus {
+  background-color: var(--accent-volt);
+}
+
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.bento-item-large { grid-column: span 12 / span 12; }
+.bento-item-medium { grid-column: span 12 / span 12; }
+.bento-item-small { grid-column: span 12 / span 12; }
+
+@media (min-width: 768px) {
+  .bento-item-large { grid-column: span 8 / span 8; }
+  .bento-item-medium { grid-column: span 6 / span 6; }
+  .bento-item-small { grid-column: span 4 / span 4; }
 }
