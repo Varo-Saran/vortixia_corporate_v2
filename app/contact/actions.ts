@@ -13,11 +13,11 @@ export async function submitContact(prevState: any, formData: FormData) {
   }
 
   try {
-    db.insert(contacts).values({
+    await db.insert(contacts).values({
       name,
       email,
       message,
-    }).run();
+    });
 
     return { success: true };
   } catch (err) {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -28,13 +29,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans text-main bg-primary">
-        <Navbar />
-        <main className="flex-1 flex flex-col">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-full flex flex-col font-sans text-main bg-[#F9F9FB] dark:bg-[#0B0B0C] transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <main className="flex-1 flex flex-col">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

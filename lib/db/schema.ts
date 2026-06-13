@@ -1,16 +1,16 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
+import { pgTable, text, serial, timestamp, integer } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
 
-export const contacts = sqliteTable('contacts', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
+export const contacts = pgTable('contacts', {
+  id: serial('id').primaryKey(),
   name: text('name').notNull(),
   email: text('email').notNull(),
   message: text('message').notNull(),
-  createdAt: text('created_at').default(sql`CURRENT_TIMESTAMP`),
+  createdAt: timestamp('created_at').defaultNow(),
 });
 
-export const jobs = sqliteTable('jobs', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
+export const jobs = pgTable('jobs', {
+  id: serial('id').primaryKey(),
   title: text('title').notNull(),
   department: text('department').notNull(),
   description: text('description').notNull(),
@@ -18,13 +18,13 @@ export const jobs = sqliteTable('jobs', {
   status: text('status').notNull().default('open'),
 });
 
-export const applications = sqliteTable('applications', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
+export const applications = pgTable('applications', {
+  id: serial('id').primaryKey(),
   jobId: integer('job_id').references(() => jobs.id).notNull(),
   candidateName: text('candidate_name').notNull(),
   candidateEmail: text('candidate_email').notNull(),
   resumeUrl: text('resume_url').notNull(),
   portfolioUrl: text('portfolio_url'),
   coverLetter: text('cover_letter').notNull(),
-  createdAt: text('created_at').default(sql`CURRENT_TIMESTAMP`),
+  createdAt: timestamp('created_at').defaultNow(),
 });

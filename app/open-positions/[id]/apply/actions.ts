@@ -18,14 +18,14 @@ export async function submitApplication(prevState: any, formData: FormData) {
   }
 
   try {
-    db.insert(applications).values({
+    await db.insert(applications).values({
       jobId,
       candidateName,
       candidateEmail,
       resumeUrl,
       portfolioUrl,
       coverLetter,
-    }).run();
+    });
 
     return { success: true };
   } catch (err) {
