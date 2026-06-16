@@ -16,8 +16,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vortixia Corporate",
-  description: "Digital Excellence Reimagined",
+  title: "Vortixia | Small Team. Massive Impact.",
+  description:
+    "Vortixia is an elite technology collective specializing in AI, predictive data analysis, and premium digital solutions. We deliver enterprise-grade quality with the agility and personalized attention of a dedicated core team.",
 };
 
 export default function RootLayout({
@@ -28,10 +29,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} h-full antialiased overflow-x-hidden`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans text-main bg-[#F9F9FB] dark:bg-[#0B0B0C] transition-colors duration-300">
+      <body
+        className="min-h-full flex flex-col font-sans text-main bg-[#F9F9FB] dark:bg-[#0B0B0C] transition-colors duration-300 overflow-x-hidden"
+        suppressHydrationWarning
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="flex-1 flex flex-col">

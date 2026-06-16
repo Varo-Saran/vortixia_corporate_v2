@@ -4,32 +4,32 @@ export default function TeamPage() {
   const team = [
     {
       name: "VATHSARAN",
-      role: "PRINCIPAL ARCHITECT",
-      desc: "Driving the core architectural vision. Specializes in scalable, zero-latency enterprise infrastructure and Next.js ecosystems.",
+      role: "PRINCIPAL ARCHITECT / CO-FOUNDER",
+      desc: "Focus on secure, scalable technical architecture, type safety, and zero-latency cloud infrastructure design.",
       image: "/images/team/Vathsaran.jpg"
     },
     {
       name: "RAMNA",
-      role: "HEAD OF OPERATIONS",
-      desc: "Executing aggressive deployment timelines and managing structural workflows to ensure flawless, continuous delivery.",
+      role: "LEAD AI ENGINEER / CO-FOUNDER",
+      desc: "Focus on scalable automation, machine learning models, custom AI workflows, and neural system integrations.",
       image: "/images/team/Ramna.jpg"
     },
     {
       name: "YAKSHARAN",
-      role: "TECHNICAL DIRECTOR",
-      desc: "Overseeing backend stability and database architecture. Ensuring absolute type safety and robust threat modeling.",
+      role: "HEAD OF DESIGN & UI/UX",
+      desc: "Focus on premium, user-centric visual experiences, stark Neo-Brutalist interface design, and conversion optimization.",
       image: "/images/team/Yaksharan.jpg"
     }
   ];
 
   return (
     <div className="flex flex-col bg-[#F9F9FB] dark:bg-[#0B0B0C] transition-colors duration-300 min-h-screen">
-      <div className="container mx-auto px-6 pt-40 pb-24">
+      <div className="container mx-auto px-6 md:px-12 pt-40 pb-24">
         <div className="max-w-4xl mb-12">
           <span className="font-sans uppercase font-bold tracking-widest text-sm text-accent-volt mb-6 block bg-[#111112] dark:bg-[#2A2A2C] px-4 py-2 inline-block">
             Human-first expertise
           </span>
-          <h1 className="font-display text-5xl md:text-7xl uppercase leading-none tracking-tight mb-8 text-[#111112] dark:text-[#F9F9FB]">
+          <h1 className="font-display text-4xl md:text-7xl uppercase leading-none tracking-tight mb-8 text-[#111112] dark:text-[#F9F9FB]">
             Meet the multidisciplinary team powering Vortixia
           </h1>
           <p className="text-xl md:text-2xl font-sans text-[#111112] dark:text-[#F9F9FB] opacity-80 max-w-2xl border-l-4 border-accent-volt pl-6">
@@ -38,7 +38,7 @@ export default function TeamPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 pb-32">
+      <div className="container mx-auto px-6 md:px-12 pb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member) => (
             <div key={member.name} className="bg-[#F9F9FB]/75 dark:bg-[#0B0B0C]/75 backdrop-blur-md border-2 border-[#111112] dark:border-[#2A2A2C] overflow-hidden flex flex-col group hover:-translate-y-2 hover:translate-x-2 hover:shadow-[-8px_8px_0px_0px_#CCFF00] dark:hover:shadow-[-8px_8px_0px_0px_#CCFF00] transition-transform duration-200 cursor-pointer">
